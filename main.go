@@ -12,7 +12,6 @@ const (
 	CHUNKS = 8
 )
 
-// generateRandomElements generates random elements.
 func generateRandomElements(size int) []int {
 	// ваш код здесь
 	if size <= 0 {
@@ -25,7 +24,6 @@ func generateRandomElements(size int) []int {
 	return data
 }
 
-// maximum returns the maximum number of elements.
 func maximum(data []int) int {
 	// ваш код здесь
 	if len(data) == 0 {
@@ -40,7 +38,6 @@ func maximum(data []int) int {
 	return maxVal
 }
 
-// maxChunks returns the maximum number of elements in a chunks.
 func maxChunks(data []int) int {
 	// ваш код здесь
 	if len(data) == 0 {
@@ -86,7 +83,6 @@ func main() {
 	max = maximum(data)
 	elapsed = time.Since(start).Microseconds()
 
-	// Заменил ms на мкс, как требуется в ТЗ
 	fmt.Printf("Максимальное значение элемента: %d\nВремя поиска: %d мкс\n", max, elapsed)
 
 	fmt.Printf("Ищем максимальное значение в %d потоков\n", CHUNKS)
@@ -95,6 +91,5 @@ func main() {
 	max = maxChunks(data)
 	elapsed = time.Since(start).Microseconds()
 
-	// Заменил ms на мкс, как требуется в ТЗ
 	fmt.Printf("Максимальное значение элемента: %d\nВремя поиска: %d мкс\n", max, elapsed)
 }
